@@ -1,32 +1,26 @@
 #include <iostream>
 using namespace std;
+
 int main(){ 
-int num ;
- cout<<"Enter the num to check if its prime or not = ";
- cin>>num;
- int i =2;
- bool isPrime =true;
-if (num<=1)
-{
-    isPrime =false;
-}
-else
-{
-   while (i<num)
-   {
-    if (num%i==0)
-    {
-       isPrime= false;
-       break;
+    int num;
+    cout << "Enter the num = ";
+    cin >> num;
+
+    int i = 2;
+
+    if (num <= 1) {
+        cout << "Not prime";
     }
-    i++;
-   }
-}
-if (isPrime)
-        cout << num << " is a Prime Number";
-    else
-        cout << num << " is NOT a Prime Number";
+    else {
+        while (i < num) {
+            if (num % i*i == 0) {
+                cout << "Not prime";
+                return 0; // direct exit once divisible
+            }
+            i++;
+        }
+        cout << "Prime"; // agar loop pura chal gaya toh prime
+    }
 
     return 0;
-
 }
